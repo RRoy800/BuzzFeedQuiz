@@ -1,25 +1,4 @@
-## Getting Started
+## Buzzfeed Quiz: What car best suits you?
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
-
-## Folder Structure
-
-The workspace contains two folders by default, where:
-
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
-
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
-
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
-
-## Dependency Management
-
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
-
-## How to run
-
-```
-javac *.java -d bin
-```
-Run `Quiz.java` file in src folder. 
+Credit to ifenghm for the original BuzzFeedQuiz Code.
+The content of the quiz was all created by myself and all bug fixes were dony myself.

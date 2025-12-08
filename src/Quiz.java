@@ -10,51 +10,98 @@ public class Quiz {
 
         public static void main(String[] args) throws Exception {
                 // Create Categories
-                Category monopoly = new Category("Monopoly",
-                                "You are traditional, fancy, and you like to call the shots.");
-                Category catan = new Category("Catan", "You are very competitive "
-                                + "but it's hidden underneath a friendly verneer. You're kinda popular but you deny it.");
-                Category ers = new Category("ERS (Egyptian Ratscrew)",
-                                "You are a racket! You bring high energy and fun to any situation.");
-                Category hanabi = new Category("Hanabi", "You are a zen master. If given the choice, peace, no war.");
+                Category tesla = new Category("Tesla Model Y",
+                                "MUST BE FILLED IN");
+                Category ford = new Category("Ford F-150", "You are very competitive "
+                                + "MUST BE FILLED IN");
+                Category merc = new Category("Mercedes Maybach 600",
+                                "MUST BE FILLED IN");
+                Category lambo = new Category("Lamborghini Aventador SVJ", "MUST BE FILLED IN");
                 // Create Questions
-                Question q1 = new Question("Where are you at the pool party?");
+                Question q1 = new Question("Which of these shoes are you wearing on a given day?");
                 // Attach Answers to Questions
-                q1.possibleAnswers[0] = new Answer("Outside playing catch at the pool.", ers);
-                q1.possibleAnswers[1] = new Answer("I'm the host of course, and entertaining my guests with stories.",
-                                monopoly);
-                q1.possibleAnswers[2] = new Answer("Having everyone eat the pie I made", catan);
-                q1.possibleAnswers[3] = new Answer("Eating pie and listening to a long story", hanabi);
+                q1.possibleAnswers[0] = new Answer("Boots", ford);
+                q1.possibleAnswers[1] = new Answer("Slip-ons" ,tesla);
+                q1.possibleAnswers[2] = new Answer("Sneakers", lambo);
+                q1.possibleAnswers[3] = new Answer("Loafers", merc);
 
-                Question q2 = new Question("You're in a rock band. What instrument do you play?");
-                q2.possibleAnswers[0] = new Answer("I'm the guitarist weeeo!", ers);
-                q2.possibleAnswers[1] = new Answer("I'm the drummer, without me, the band's nothing", monopoly);
-                q2.possibleAnswers[2] = new Answer("I'm the lead singer!", catan);
-                q2.possibleAnswers[3] = new Answer("I'm the manager, taking care of my players behind the scenes.",
-                                hanabi);
+                Question q2 = new Question("What is your ideal pet of these options?");
+                // Attach Answers to Questions
+                q2.possibleAnswers[0] = new Answer("Horse", ford);
+                q2.possibleAnswers[1] = new Answer("Rottweiler" ,merc);
+                q2.possibleAnswers[2] = new Answer("Shark", lambo);
+                q2.possibleAnswers[3] = new Answer("No pets", tesla);
+               
+                Question q3 = new Question("How would your friends describe you?");
+                // Attach Answers to Questions
+                q3.possibleAnswers[0] = new Answer("Fun", lambo);
+                q3.possibleAnswers[1] = new Answer("Smart" ,merc);
+                q3.possibleAnswers[2] = new Answer("Tough guy", ford);
+                q3.possibleAnswers[3] = new Answer("Tech-savvy", tesla);
 
+                 Question q4 = new Question("Choose a road trip snack and drink.");
+                // Attach Answers to Questions
+                q4.possibleAnswers[0] = new Answer("Energy Drink + Protein Bar", lambo);
+                q4.possibleAnswers[1] = new Answer("Coffer + Croissant" ,merc);
+                q4.possibleAnswers[2] = new Answer("Coke + Beef Jerky", ford);
+                q4.possibleAnswers[3] = new Answer("Soy Late + Trail Mix", tesla);
+
+                Question q5 = new Question("What music are you listening to?");
+                // Attach Answers to Questions
+                q5.possibleAnswers[0] = new Answer("Country", ford);
+                q5.possibleAnswers[1] = new Answer("Pop" ,tesla);
+                q5.possibleAnswers[2] = new Answer("Classical", merc);
+                q5.possibleAnswers[3] = new Answer("Rock", lambo);
+
+                Question q6 = new Question("Which of these if your favotie sport?");
+                // Attach Answers to Questions
+                q6.possibleAnswers[0] = new Answer("Formula 1", lambo);
+                q6.possibleAnswers[1] = new Answer("Golf" ,merc);
+                q6.possibleAnswers[2] = new Answer("Football", ford);
+                q6.possibleAnswers[3] = new Answer("Hiking", tesla);
+
+                Question q7 = new Question("What is closest to your typical weekend activity?");
+                // Attach Answers to Questions
+                q7.possibleAnswers[0] = new Answer("Going to a party", lambo);
+                q7.possibleAnswers[1] = new Answer("Hosting a dinner" ,merc);
+                q7.possibleAnswers[2] = new Answer("Binging a TV show", tesla);
+                q7.possibleAnswers[3] = new Answer("BBQing", ford);
+
+                Question q8 = new Question("Which of these is your favorite holiday?");
+                // Attach Answers to Questions
+                q8.possibleAnswers[0] = new Answer("4th of July", ford);
+                q8.possibleAnswers[1] = new Answer("Thanksgiving" ,merc);
+                q8.possibleAnswers[2] = new Answer("Haloween", tesla);
+                q8.possibleAnswers[3] = new Answer("Your Birthday", lambo);
+
+                Question q9 = new Question("Which of these books do you most like?");
+                // Attach Answers to Questions
+                q9.possibleAnswers[0] = new Answer("The Hunt for Red October", ford);
+                q9.possibleAnswers[1] = new Answer("The Godfather" ,merc);
+                q9.possibleAnswers[2] = new Answer("To Kill a Mockingbird", tesla);
+                q9.possibleAnswers[3] = new Answer("Moneyball", lambo);
                 // ... more questions here
 
                 // For each question, ask, read input, store answer.
                 gameIntro();
-                Question[] qList = { q1, q2 };
+                Question[] qList = { q1, q2, q3, q4, q5, q6, q7, q8, q9};
                 for (Question q : qList) {
                         Category c = q.ask(sc);
                         c.points++;
                 }
                 // Get most common category from the questions asked
                 // Return Category
-                Category[] cList = { monopoly, catan, ers, hanabi };
+                Category[] cList = { tesla, ford, merc, lambo };
                 // these need to be in the same order or the points will be incorrect!
                 int index = getMostPopularCatIndex(cList);
-                System.out.println("If you were a board game, you would be " + cList[index].label + ". ");
+                System.out.println("The car that best suits you in The " + cList[index].label + ". ");
                 System.out.println(cList[index].description);
 
         }
 
         public static void gameIntro() {
                 // requires 1 to keep going
-                System.out.println("Which Board Game Are You?");
+                System.out.println("Which Car Best Suits You?");
                 System.out.println("You get to choose numbers 1-4 for every question. Enter '1' to play!");
                 int play = sc.nextInt();
                 if (play != 1) {
