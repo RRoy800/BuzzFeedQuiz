@@ -34,16 +34,16 @@ public class Quiz {
                
                 Question q3 = new Question("How would your friends describe you?");
                 // Attach Answers to Questions
-                q3.possibleAnswers[0] = new Answer("Fun", lambo);
-                q3.possibleAnswers[1] = new Answer("Smart" ,merc);
+                q3.possibleAnswers[0] = new Answer("Smart" ,merc);
+                q3.possibleAnswers[1] = new Answer("Fun", lambo);
                 q3.possibleAnswers[2] = new Answer("Tough guy", ford);
                 q3.possibleAnswers[3] = new Answer("Tech-savvy", tesla);
 
                  Question q4 = new Question("Choose a road trip snack and drink.");
                 // Attach Answers to Questions
                 q4.possibleAnswers[0] = new Answer("Energy Drink + Protein Bar", lambo);
-                q4.possibleAnswers[1] = new Answer("Coffer + Croissant" ,merc);
-                q4.possibleAnswers[2] = new Answer("Coke + Beef Jerky", ford);
+                q4.possibleAnswers[1] = new Answer("Coke + Beef Jerky", ford);
+                q4.possibleAnswers[2] = new Answer("Coffer + Croissant" ,merc);
                 q4.possibleAnswers[3] = new Answer("Soy Late + Trail Mix", tesla);
 
                 Question q5 = new Question("What music are you listening to?");
@@ -56,9 +56,9 @@ public class Quiz {
                 Question q6 = new Question("Which of these if your favotie sport?");
                 // Attach Answers to Questions
                 q6.possibleAnswers[0] = new Answer("Formula 1", lambo);
-                q6.possibleAnswers[1] = new Answer("Golf" ,merc);
-                q6.possibleAnswers[2] = new Answer("Football", ford);
-                q6.possibleAnswers[3] = new Answer("Hiking", tesla);
+                q6.possibleAnswers[1] = new Answer("Football", ford);
+                q6.possibleAnswers[2] = new Answer("Hiking", tesla);
+                q6.possibleAnswers[3] = new Answer("Golf" ,merc);
 
                 Question q7 = new Question("What is closest to your typical weekend activity?");
                 // Attach Answers to Questions
@@ -74,12 +74,12 @@ public class Quiz {
                 q8.possibleAnswers[2] = new Answer("Haloween", tesla);
                 q8.possibleAnswers[3] = new Answer("Your Birthday", lambo);
 
-                Question q9 = new Question("Which of these books do you most like?");
+                Question q9 = new Question("Which of these books do you most like?"); //MAKE TIEBRAKER
                 // Attach Answers to Questions
                 q9.possibleAnswers[0] = new Answer("The Hunt for Red October", ford);
                 q9.possibleAnswers[1] = new Answer("The Godfather" ,merc);
                 q9.possibleAnswers[2] = new Answer("To Kill a Mockingbird", tesla);
-                q9.possibleAnswers[3] = new Answer("Moneyball", lambo);
+                q9.possibleAnswers[3] = new Answer("Moneyball1", lambo);
                 // ... more questions here
 
                 // For each question, ask, read input, store answer.
@@ -94,7 +94,7 @@ public class Quiz {
                 Category[] cList = { tesla, ford, merc, lambo };
                 // these need to be in the same order or the points will be incorrect!
                 int index = getMostPopularCatIndex(cList);
-                System.out.println("The car that best suits you in The " + cList[index].label + ". ");
+                System.out.println("The car that best suits you is The " + cList[index].label + ". ");
                 System.out.println(cList[index].description);
 
         }
@@ -105,7 +105,7 @@ public class Quiz {
                 System.out.println("You get to choose numbers 1-4 for every question. Enter '1' to play!");
                 int play = sc.nextInt();
                 if (play != 1) {
-                        System.out.println("Unidentifiable input. Please enter '1' to play");
+                        System.out.println("Unidentifiable input. Please enter '1' to play"); //USE THIS CODE TO FIX ERRORS DURING GAME
                         gameIntro();
                 }
         }

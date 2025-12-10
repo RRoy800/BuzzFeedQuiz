@@ -6,7 +6,7 @@ import java.util.Scanner;
 public class Question {
     // Fields
     String label;
-    Answer[] possibleAnswers = new Answer[4];
+    Answer[] possibleAnswers = new Answer[4];//make an array list maybe?
 
     Question(String label) {
         this.label = label;
@@ -21,8 +21,20 @@ public class Question {
             System.out.println("[" + choice + "]:" +
                     this.possibleAnswers[i].label);
         }
-        int ans = sc.nextInt();
-        return possibleAnswers[ans - 1].cat;
+   int ans = 0;
+
+    while (ans < 1 || ans > 4) {
+        while (!sc.hasNextInt()) {
+            sc.next();
+            System.out.println("Please enter a number that corresponds with an answer choice. kk");
+        }
+        ans = sc.nextInt();
+        if (ans < 1 || ans > 4) {
+            System.out.println("Please enter a number that corresponds with an answer choice.");
+        }
+    }
+
+    return possibleAnswers[ans - 1].cat;
     }
 
 }
