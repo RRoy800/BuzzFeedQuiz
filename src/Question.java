@@ -26,7 +26,7 @@ public class Question {
     while (ans < 1 || ans > 4) {
         while (!sc.hasNextInt()) {
             sc.next();
-            System.out.println("Please enter a number that corresponds with an answer choice. kk");
+            System.out.println("Please enter a number that corresponds with an answer choice.");
         }
         ans = sc.nextInt();
         if (ans < 1 || ans > 4) {
