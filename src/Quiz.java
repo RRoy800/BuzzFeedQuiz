@@ -107,14 +107,6 @@ public class Quiz {
                 System.out.println("Which Car Best Suits You?");
                 System.out.println("You get to choose numbers 1-4 for every question. Enter '1' to play!");
                 int play = 0;
-                /*
-                 * if (play != 1) {
-                 * System.out.println("Unidentifiable input. Please enter '1' to play"); //USE
-                 * THIS CODE TO FIX ERRORS DURING GAME
-                 * gameIntro();
-                 * }/*
-                 */
-
                 while (play < 1 || play > 1) {
                         while (!sc.hasNextInt()) {
                                 sc.next();
@@ -122,7 +114,7 @@ public class Quiz {
                         }
                         play = sc.nextInt();
                         if (play < 1 || play > 1) {
-                                System.out.println("Unidentifiable input. Please enter '1' to play");
+                                System.out.println("Unidentifiable input. Please enter '1' to plays");
                         }
                 }
         }
